@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-theory';
+  mess: string = 'lasha'
+  logLength(lenght: number){
+    console.log(lenght)
+  }
 }

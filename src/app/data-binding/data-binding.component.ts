@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'angular-course-data-binding',
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class DataBindingComponent  implements  OnInit{
+  @Input() mess :string = ''
+  @Output() lengthCount = new EventEmitter<number>();
+
+
 imgTest=  {
   img: 'https://www.angularjswiki.com/angular/use-ngoptimizedimage-to-improve-image-loading-performance-in-angular/featured.png',
   text: 'angular-course',
@@ -40,4 +44,8 @@ changeSq(){
 
   }
 
+  countLength(){
+  this.lengthCount.emit(this.mess.length)
+
+  }
 }
